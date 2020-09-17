@@ -28,27 +28,23 @@ public class Workspace {
     
     /**
      * Detecta y obtiene archivos seleccionados por el usuario
-     * @param Cantidad Entero, indica cantidad de archivos a seleccionar
+     * @param Archivos ArrayList String, Nombres de archivos a agregar 
      * @return ArrayList TextoPlano, arreglo con los archivos seleccionados
      */
-    public ArrayList<TextoPlano> obtenerArchivos(int Cantidad){
-        
+    public ArrayList<TextoPlano> obtenerArchivos(ArrayList<String> Archivos){
+ 
         ArrayList<TextoPlano> TextosPlanosFinal = new ArrayList<>();
         
-        for(int i = 0; i < Cantidad; i++){        
-            System.out.println("Nombre del archivo: ");
-            Scanner objArchivo = new Scanner(System.in);
-            String nombreArchivo = objArchivo.nextLine();
+        for(int i = 0; i < Archivos.size(); i++){        
+            String nombreArchivo = Archivos.get(i);
             for(int j = 0; j < TextosPlanos.size(); j++){
                 TextoPlano Aux2 = TextosPlanos.get(j);
                 String nombreArchivoAux = Aux2.getNombre();
                 if(nombreArchivo.equals(nombreArchivoAux)){
                     TextosPlanosFinal.add(Aux2);
                 }
-                
             }
         }
-        
         return TextosPlanosFinal;
     }
     

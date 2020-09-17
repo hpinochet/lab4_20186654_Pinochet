@@ -47,19 +47,11 @@ public class ZonaTrabajo {
     
     /**
      * Metodo para crear e ingresar archivos a workspace
+     * @param nombre String, Nombre Archivo.
+     * @param contenido String, Contenido Archivo.
      */
-    public void gitCrear(){
-        
-        // Se obtienen datos del nuevo texto plano
-        
-        Scanner objRepo = new Scanner(System.in);
-        System.out.println("Ingrese nombre de texto plano: ");
-        String nombre = objRepo.nextLine();
-        
-        Scanner objContenido = new Scanner(System.in);
-        System.out.println("Ingrese contenido de texto plano: ");
-        String contenido = objContenido.nextLine();
-               
+    public void gitCrear(String nombre, String contenido){
+                
         LocalDateTime objFecha = LocalDateTime.now();   
         DateTimeFormatter objFormateado = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");  
         String formattedDate = objFecha.format(objFormateado);
@@ -78,9 +70,11 @@ public class ZonaTrabajo {
     
     /**
      * Metodo para simular funcion Add de Git
+     * @param opcion Entero, indica opcion de add
+     * @param Archivos ArrayList String, indica los archivos a agregar
      * @return Entero, este es para finalizar metodo.
      */
-    public int gitAdd(){
+    public int gitAdd(int opcion, ArrayList<String> Archivos){
                
         // Caso borde
         
@@ -89,26 +83,7 @@ public class ZonaTrabajo {
             System.out.println(" ");
             return 0;
         }
-        
-        System.out.println("Escoja opcion de add");
-        System.out.println("1. Todos los Archivos");
-        System.out.println("2. Ingresar Archivos especificos");
-        Scanner objOpcion2 = new Scanner(System.in);
-        System.out.println("INTRODUZCA SU OPCION: ");
-        
-        int opcion = 0;
-        
-        try{
-            opcion = objOpcion2.nextInt();
-
-            if(opcion < 1 || opcion > 2){
-                System.out.println(" \n! Error, introduzca una opcion valida.\n");
-            }
-        }catch(InputMismatchException e){
-           System.out.println("\n! Error, introduzca una opcion valida.\n");
-           objOpcion2.next();
-        }
-        
+       
         // Opcion de Ingresar todos los Archivos
         if(opcion == 1){
 
@@ -125,25 +100,9 @@ public class ZonaTrabajo {
         // Opcion de Ingresar ciertos archivos
         if(opcion == 2){
             
-            // Se pregunta cuantos archivos se eligiran
-            
-            System.out.println("Cuantos archivos agregara: ");
-            Scanner objCantidad = new Scanner(System.in);
-            int Cantidad = 0;
-            try{
-                Cantidad = objCantidad.nextInt();
-
-                if(Cantidad < 0){
-                    System.out.println(" \n! Error, introduzca una opcion valida.\n");
-                }
-            }catch(InputMismatchException e){
-                System.out.println("\n! Error, introduzca una opcion valida.\n");
-                objCantidad.next();
-            }
-                        
             // Se agegan los archivos
             
-            index.agregarArchivosWorkspace(workspace,Cantidad);
+            index.agregarArchivosWorkspace(workspace,Archivos);
             
             // Se eliminan los archivos repetidos 
 
