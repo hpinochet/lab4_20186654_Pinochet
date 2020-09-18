@@ -31,7 +31,37 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuCommit.setVisible(false);   
         jPanelVentanaInformacion.setVisible(false);
     }
-
+    
+    public void BloqBotones(){
+        btnInit.setEnabled(false);
+        btnNewArchivo.setEnabled(false);
+        btnAdd.setEnabled(false);
+        btnCommit.setEnabled(false);
+        btnPush.setEnabled(false);
+        btnPull.setEnabled(false);
+        btnStaWork.setEnabled(false);
+        btnStaInd.setEnabled(false);
+        btnStaLoc.setEnabled(false);
+        btnStaRem.setEnabled(false);
+        btnLog.setEnabled(false);
+        btnZonaTrabajo.setEnabled(false);
+    }
+    
+    public void DesBotones(){
+        btnInit.setEnabled(true);
+        btnNewArchivo.setEnabled(true);
+        btnAdd.setEnabled(true);
+        btnCommit.setEnabled(true);
+        btnPush.setEnabled(true);
+        btnPull.setEnabled(true);
+        btnStaWork.setEnabled(true);
+        btnStaInd.setEnabled(true);
+        btnStaLoc.setEnabled(true);
+        btnStaRem.setEnabled(true);
+        btnLog.setEnabled(true);
+        btnZonaTrabajo.setEnabled(true);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +72,15 @@ public class InterfazGit extends javax.swing.JFrame {
     private void initComponents() {
 
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jPanelVentanaInformacion = new javax.swing.JPanel();
+        jFieldInformacionVInformacion = new javax.swing.JTextField();
+        jbtnAceptarInformacion = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jPanelStatus = new javax.swing.JPanel();
+        jFieldTituloPanelStatus = new javax.swing.JTextField();
+        jAreaPanelStatus = new javax.swing.JScrollPane();
+        jTextAreaInformacionPanelStatus = new javax.swing.JTextArea();
+        jbtnAceptarPanelStatus = new javax.swing.JButton();
         jPanelMenuCommit = new javax.swing.JPanel();
         jFieldAutorCommit = new javax.swing.JTextField();
         jFieldMensajeCommit = new javax.swing.JTextField();
@@ -76,15 +115,6 @@ public class InterfazGit extends javax.swing.JFrame {
         jFieldNombreNewArchivo = new javax.swing.JTextField();
         jFieldContenidoNewArchivo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jPanelStatus = new javax.swing.JPanel();
-        jFieldTituloPanelStatus = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jAreaInformacion = new javax.swing.JTextArea();
-        jbtnAceptarPanelStatus = new javax.swing.JButton();
-        jPanelVentanaInformacion = new javax.swing.JPanel();
-        jFieldInformacionVInformacion = new javax.swing.JTextField();
-        jbtnAceptarInformacion = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
         btnStaWork = new javax.swing.JButton();
         btnStaInd = new javax.swing.JButton();
         btnStaLoc = new javax.swing.JButton();
@@ -107,6 +137,97 @@ public class InterfazGit extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(526, 460));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelVentanaInformacion.setMaximumSize(new java.awt.Dimension(360, 121));
+        jPanelVentanaInformacion.setMinimumSize(new java.awt.Dimension(360, 121));
+
+        jFieldInformacionVInformacion.setEditable(false);
+
+        jbtnAceptarInformacion.setText("Aceptar");
+        jbtnAceptarInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnAceptarInformacionActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Informacion");
+
+        javax.swing.GroupLayout jPanelVentanaInformacionLayout = new javax.swing.GroupLayout(jPanelVentanaInformacion);
+        jPanelVentanaInformacion.setLayout(jPanelVentanaInformacionLayout);
+        jPanelVentanaInformacionLayout.setHorizontalGroup(
+            jPanelVentanaInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
+                .addGroup(jPanelVentanaInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jFieldInformacionVInformacion))
+                    .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jbtnAceptarInformacion)
+                        .addGap(0, 126, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelVentanaInformacionLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addGap(145, 145, 145))
+        );
+        jPanelVentanaInformacionLayout.setVerticalGroup(
+            jPanelVentanaInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addGap(24, 24, 24)
+                .addComponent(jFieldInformacionVInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbtnAceptarInformacion)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanelVentanaInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 360, 121));
+
+        jFieldTituloPanelStatus.setEditable(false);
+
+        jTextAreaInformacionPanelStatus.setColumns(20);
+        jTextAreaInformacionPanelStatus.setRows(5);
+        jAreaPanelStatus.setViewportView(jTextAreaInformacionPanelStatus);
+
+        jbtnAceptarPanelStatus.setText("Aceptar");
+        jbtnAceptarPanelStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnAceptarPanelStatusActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelStatusLayout = new javax.swing.GroupLayout(jPanelStatus);
+        jPanelStatus.setLayout(jPanelStatusLayout);
+        jPanelStatusLayout.setHorizontalGroup(
+            jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStatusLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jAreaPanelStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addGap(447, 447, 447))
+            .addGroup(jPanelStatusLayout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jbtnAceptarPanelStatus)
+                .addGap(217, 217, 217))
+        );
+        jPanelStatusLayout.setVerticalGroup(
+            jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStatusLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jAreaPanelStatus)
+                .addGap(18, 18, 18)
+                .addComponent(jbtnAceptarPanelStatus)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 460));
 
         jPanelMenuCommit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -217,38 +338,36 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                         .addGap(119, 119, 119))
                     .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGap(266, 266, 266))
+                            .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(236, 236, 236)))
                         .addComponent(jFieldNombreAdd2)
                         .addContainerGap())))
-            .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGap(404, 404, 404))
-                .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                    .addGap(219, 219, 219)
-                    .addComponent(jbtnAceptarAdd2)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
                 .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(jLabel5))
+                        .addGap(219, 219, 219)
+                        .addComponent(jbtnAceptarAdd2))
                     .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(jLabel3)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(512, 512, 512)
+                        .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelMenuAdd2Layout.setVerticalGroup(
             jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(118, 118, 118)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -257,7 +376,7 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbtnAceptarAdd2)
                 .addGap(19, 19, 19))
@@ -308,7 +427,9 @@ public class InterfazGit extends javax.swing.JFrame {
 
         getContentPane().add(jPanelMenuAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 180, 90));
 
-        jPanelMenuInit.setPreferredSize(new java.awt.Dimension(360, 180));
+        jPanelMenuInit.setMaximumSize(new java.awt.Dimension(360, 156));
+        jPanelMenuInit.setMinimumSize(new java.awt.Dimension(360, 156));
+        jPanelMenuInit.setPreferredSize(new java.awt.Dimension(360, 156));
 
         jLabel9.setText("Ingrese Nombre Autor:");
 
@@ -339,25 +460,25 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuInit.setLayout(jPanelMenuInitLayout);
         jPanelMenuInitLayout.setHorizontalGroup(
             jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnAceptInit)
-                .addGap(133, 133, 133))
             .addGroup(jPanelMenuInitLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelMenuInitLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jFieldAutorInit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFieldNombreInit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelMenuInitLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLabel11)))
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addGap(24, 24, 24)
+                .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jFieldAutorInit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFieldNombreInit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
+                        .addComponent(btnAceptInit)
+                        .addGap(132, 132, 132))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(152, 152, 152))))
         );
         jPanelMenuInitLayout.setVerticalGroup(
             jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,10 +495,10 @@ public class InterfazGit extends javax.swing.JFrame {
                     .addComponent(jFieldNombreInit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAceptInit, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelMenuInit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 360, 180));
+        getContentPane().add(jPanelMenuInit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 360, 156));
 
         jLabel12.setText("Ingrese Contenido Archivo:");
 
@@ -446,88 +567,6 @@ public class InterfazGit extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanelMenuNewArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 340, 160));
-
-        jAreaInformacion.setColumns(20);
-        jAreaInformacion.setRows(5);
-        jScrollPane2.setViewportView(jAreaInformacion);
-
-        jbtnAceptarPanelStatus.setText("Aceptar");
-
-        javax.swing.GroupLayout jPanelStatusLayout = new javax.swing.GroupLayout(jPanelStatus);
-        jPanelStatus.setLayout(jPanelStatusLayout);
-        jPanelStatusLayout.setHorizontalGroup(
-            jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelStatusLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbtnAceptarPanelStatus)
-                .addGap(189, 189, 189))
-        );
-        jPanelStatusLayout.setVerticalGroup(
-            jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelStatusLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jbtnAceptarPanelStatus)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 500, 230, 140));
-
-        jPanelVentanaInformacion.setMaximumSize(new java.awt.Dimension(360, 121));
-        jPanelVentanaInformacion.setMinimumSize(new java.awt.Dimension(360, 121));
-
-        jbtnAceptarInformacion.setText("Aceptar");
-        jbtnAceptarInformacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnAceptarInformacionActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setText("Informacion");
-
-        javax.swing.GroupLayout jPanelVentanaInformacionLayout = new javax.swing.GroupLayout(jPanelVentanaInformacion);
-        jPanelVentanaInformacion.setLayout(jPanelVentanaInformacionLayout);
-        jPanelVentanaInformacionLayout.setHorizontalGroup(
-            jPanelVentanaInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
-                .addGroup(jPanelVentanaInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jFieldInformacionVInformacion))
-                    .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jbtnAceptarInformacion)
-                        .addGap(0, 126, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelVentanaInformacionLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(145, 145, 145))
-        );
-        jPanelVentanaInformacionLayout.setVerticalGroup(
-            jPanelVentanaInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelVentanaInformacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addGap(24, 24, 24)
-                .addComponent(jFieldInformacionVInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jbtnAceptarInformacion)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanelVentanaInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 360, 110));
 
         btnStaWork.setText("Status Workspace");
         btnStaWork.addActionListener(new java.awt.event.ActionListener() {
@@ -610,9 +649,19 @@ public class InterfazGit extends javax.swing.JFrame {
         getContentPane().add(btnPush, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 119, -1));
 
         btnLog.setText("Log");
+        btnLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 130, -1));
 
         btnZonaTrabajo.setText("Status Zona");
+        btnZonaTrabajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZonaTrabajoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnZonaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 130, -1));
 
         LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
@@ -623,53 +672,78 @@ public class InterfazGit extends javax.swing.JFrame {
 
     private void btnStaWorkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaWorkActionPerformed
         // TODO add your handling code here:
+        jPanelStatus.setVisible(true);
+        BloqBotones();
+        jFieldTituloPanelStatus.setText("Status Workspace");
+        jTextAreaInformacionPanelStatus.setText(Zona.toStringWorkspace());
     }//GEN-LAST:event_btnStaWorkActionPerformed
 
     private void btnStaLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaLocActionPerformed
         // TODO add your handling code here:
+        jPanelStatus.setVisible(true);
+        BloqBotones();
+        jFieldTituloPanelStatus.setText("Status Local Repository");
+        jTextAreaInformacionPanelStatus.setText(Zona.toStringLocal());
     }//GEN-LAST:event_btnStaLocActionPerformed
 
     private void btnStaIndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaIndActionPerformed
         // TODO add your handling code here:
+        jPanelStatus.setVisible(true);
+        BloqBotones();
+        jFieldTituloPanelStatus.setText("Status Index");
+        jTextAreaInformacionPanelStatus.setText(Zona.toStringIndex());
     }//GEN-LAST:event_btnStaIndActionPerformed
 
     private void btnStaRemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaRemActionPerformed
         // TODO add your handling code here:
+        jPanelStatus.setVisible(true);
+        BloqBotones();
+        jFieldTituloPanelStatus.setText("Status Remote Repositoy");
+        jTextAreaInformacionPanelStatus.setText(Zona.toStringWorkspace());
     }//GEN-LAST:event_btnStaRemActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         jPanelMenuAdd.setVisible(true);
+        BloqBotones();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnInitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInitActionPerformed
         // TODO add your handling code here:
         jPanelMenuInit.setVisible(true);
+        BloqBotones();
         btnInit.setEnabled(false);
     }//GEN-LAST:event_btnInitActionPerformed
 
     private void btnNewArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewArchivoActionPerformed
         // TODO add your handling code here:
         jPanelMenuNewArchivo.setVisible(true);
+        BloqBotones();
     }//GEN-LAST:event_btnNewArchivoActionPerformed
 
     private void btnCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitActionPerformed
         // TODO add your handling code here:
         jPanelMenuCommit.setVisible(true);
+        BloqBotones();
     }//GEN-LAST:event_btnCommitActionPerformed
 
     private void btnPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPullActionPerformed
         // TODO add your handling code here:
         jPanelVentanaInformacion.setVisible(true);
+        BloqBotones();
         Zona.gitPull();
-        jFieldInformacionVInformacion.setText("Pull realizado Correctamente");
+        jFieldInformacionVInformacion.setText("Pull Realizado Correctamente");
+        System.out.println(Zona);
+        
     }//GEN-LAST:event_btnPullActionPerformed
 
     private void btnPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPushActionPerformed
         // TODO add your handling code here:
         jPanelVentanaInformacion.setVisible(true);
+        BloqBotones();
         Zona.gitPush();
-        jFieldInformacionVInformacion.setText("Push realizado Correctamente");
+        jFieldInformacionVInformacion.setText("Push Realizado Correctamente");
+        System.out.println(Zona);
     }//GEN-LAST:event_btnPushActionPerformed
 
     private void jbtnSeleccionarAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSeleccionarAddActionPerformed
@@ -694,6 +768,8 @@ public class InterfazGit extends javax.swing.JFrame {
         Zona.gitCommit(nombreAutorCommit  ,nombreMensajeCommit);
         jPanelMenuCommit.setVisible(false);
         System.out.println(Zona);
+        jPanelVentanaInformacion.setVisible(true);
+        jFieldInformacionVInformacion.setText("Commit Realizado Correctamente");
     }//GEN-LAST:event_jbtnAceptarCommitActionPerformed
 
     private void jFieldAutorCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldAutorCommitActionPerformed
@@ -708,6 +784,8 @@ public class InterfazGit extends javax.swing.JFrame {
         jTextAreaStatusWorkspaceAdd.setText(null);
         jPanelMenuAdd2.setVisible(false);
         System.out.println(Zona);
+        jPanelVentanaInformacion.setVisible(true);
+        jFieldInformacionVInformacion.setText("Add Realizado Correctamente");
     }//GEN-LAST:event_jbtnAceptarAdd2ActionPerformed
 
     private void btnAceptInitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptInitActionPerformed
@@ -718,6 +796,8 @@ public class InterfazGit extends javax.swing.JFrame {
         Zona = new ZonaTrabajo(NombreInit,AutorInit);
         jPanelMenuInit.setVisible(false);
         System.out.println(Zona);
+        jPanelVentanaInformacion.setVisible(true);
+        jFieldInformacionVInformacion.setText("Init Realizado Correctamente");
     }//GEN-LAST:event_btnAceptInitActionPerformed
 
     private void jFieldAutorInitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldAutorInitActionPerformed
@@ -740,6 +820,8 @@ public class InterfazGit extends javax.swing.JFrame {
         
         jPanelMenuNewArchivo.setVisible(false);
         System.out.println(Zona);
+        jPanelVentanaInformacion.setVisible(true);
+        jFieldInformacionVInformacion.setText("Nuevo Archivo Realizado Correctamente");
         
     }//GEN-LAST:event_btnAceptarNewArchivoActionPerformed
 
@@ -756,14 +838,40 @@ public class InterfazGit extends javax.swing.JFrame {
         Zona.gitAdd(1,null);
         jPanelMenuAdd.setVisible(false);
         System.out.println(Zona);
+        jPanelVentanaInformacion.setVisible(true);
+        jFieldInformacionVInformacion.setText("Add Realizado Correctamente");
     }//GEN-LAST:event_jbtnAgregarTodosAddActionPerformed
 
     private void jbtnAceptarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarInformacionActionPerformed
         // TODO add your handling code here:
         jFieldInformacionVInformacion.setText(null);
         jPanelVentanaInformacion.setVisible(false);
-        System.out.println(Zona);
+        DesBotones();
     }//GEN-LAST:event_jbtnAceptarInformacionActionPerformed
+
+    private void jbtnAceptarPanelStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarPanelStatusActionPerformed
+        // TODO add your handling code here:
+        jPanelStatus.setVisible(false);
+        jTextAreaInformacionPanelStatus.setText(null);
+        DesBotones();
+    }//GEN-LAST:event_jbtnAceptarPanelStatusActionPerformed
+
+    private void btnLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogActionPerformed
+        // TODO add your handling code here:
+        jPanelStatus.setVisible(true);
+        BloqBotones();
+        jFieldTituloPanelStatus.setText("Log");
+        jTextAreaInformacionPanelStatus.setText(Zona.gitLog());
+    }//GEN-LAST:event_btnLogActionPerformed
+
+    private void btnZonaTrabajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZonaTrabajoActionPerformed
+        // TODO add your handling code here:
+        jPanelStatus.setVisible(true);
+        BloqBotones();
+        jFieldTituloPanelStatus.setText("Zona de Trabajo");
+        jTextAreaInformacionPanelStatus.setText(Zona.toString());
+             
+    }//GEN-LAST:event_btnZonaTrabajoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -816,7 +924,7 @@ public class InterfazGit extends javax.swing.JFrame {
     private javax.swing.JButton btnStaRem;
     private javax.swing.JButton btnStaWork;
     private javax.swing.JButton btnZonaTrabajo;
-    private javax.swing.JTextArea jAreaInformacion;
+    private javax.swing.JScrollPane jAreaPanelStatus;
     private javax.swing.JTextField jFieldAutorCommit;
     public static javax.swing.JTextField jFieldAutorInit;
     private javax.swing.JTextField jFieldContenidoNewArchivo;
@@ -850,7 +958,7 @@ public class InterfazGit extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelStatus;
     private javax.swing.JPanel jPanelVentanaInformacion;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextAreaInformacionPanelStatus;
     private javax.swing.JTextArea jTextAreaStatusWorkspaceAdd;
     private javax.swing.JButton jbtnAceptarAdd2;
     private javax.swing.JButton jbtnAceptarCommit;

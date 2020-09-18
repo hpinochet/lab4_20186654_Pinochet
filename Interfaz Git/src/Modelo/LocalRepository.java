@@ -35,8 +35,9 @@ public class LocalRepository {
     
     /**
      * Entrega por pantalla los ultimos 5 commits, funcion log
+     * @return String, Informacion ultimos commits
      */
-    public void obtenerUltimosCommits(){
+    public String obtenerUltimosCommits(){
         
         ArrayList<Commit> ultimosCommits = new ArrayList<>();
         
@@ -50,7 +51,7 @@ public class LocalRepository {
             }           
         }
         
-        System.out.println("Ultimos commits = " + ultimosCommits); 
+        return "Ultimos commits = " + ultimosCommits; 
     }
     
     /**

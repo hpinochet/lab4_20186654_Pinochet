@@ -264,11 +264,12 @@ public class ZonaTrabajo {
     
     /**
      * Se muestra por pantalla los ultimos 5 commits
+     * @return String, Retorna informacion ultimos commits
      */
-    public void gitLog(){
+    public String gitLog(){
         
         // Muestra por pantalla ultimos commits
-        local.obtenerUltimosCommits();
+        return local.obtenerUltimosCommits();
   
     }
     
@@ -379,6 +380,18 @@ public class ZonaTrabajo {
     
     public String toStringWorkspace(){
         return workspace.toString();
+    }
+    
+    public String toStringIndex(){
+        return index.toString();
+    }
+    
+    public String toStringLocal(){
+        return local.toString();
+    }
+    
+    public String toStringRemote(){
+        return remote.toString();
     }
     
 }
