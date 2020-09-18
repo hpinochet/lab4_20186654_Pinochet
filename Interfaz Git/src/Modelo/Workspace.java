@@ -28,15 +28,15 @@ public class Workspace {
     
     /**
      * Detecta y obtiene archivos seleccionados por el usuario
-     * @param Archivos ArrayList String, Nombres de archivos a agregar 
+     * @param Archivos List String, Nombres de archivos a agregar 
      * @return ArrayList TextoPlano, arreglo con los archivos seleccionados
      */
-    public ArrayList<TextoPlano> obtenerArchivos(ArrayList<String> Archivos){
+    public ArrayList<TextoPlano> obtenerArchivos(String[] Archivos){
  
         ArrayList<TextoPlano> TextosPlanosFinal = new ArrayList<>();
         
-        for(int i = 0; i < Archivos.size(); i++){        
-            String nombreArchivo = Archivos.get(i);
+        for(int i = 0; i < Archivos.length; i++){        
+            String nombreArchivo = Archivos[i];
             for(int j = 0; j < TextosPlanos.size(); j++){
                 TextoPlano Aux2 = TextosPlanos.get(j);
                 String nombreArchivoAux = Aux2.getNombre();

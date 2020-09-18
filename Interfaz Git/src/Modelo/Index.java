@@ -31,9 +31,9 @@ public class Index {
     /**
      * Agrega solo los archivos seleccionados de workspace
      * @param workspace Objeto Workspace, contiene los archivos workspace
-     * @param Archivos ArrayList String, indica archivos agregar
+     * @param Archivos List String, indica archivos agregar
      */
-    public void agregarArchivosWorkspace(Workspace workspace, ArrayList<String> Archivos){ 
+    public void agregarArchivosWorkspace(Workspace workspace, String[] Archivos){ 
         ArrayList<TextoPlano> workspaceTextos = workspace.obtenerArchivos(Archivos);
         for(int i = 0; i < workspaceTextos.size(); i++){
             TextosPlanos.add(workspaceTextos.get(i));

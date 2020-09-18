@@ -74,7 +74,7 @@ public class ZonaTrabajo {
      * @param Archivos ArrayList String, indica los archivos a agregar
      * @return Entero, este es para finalizar metodo.
      */
-    public int gitAdd(int opcion, ArrayList<String> Archivos){
+    public int gitAdd(int opcion, String Archivos){
                
         // Caso borde
         
@@ -100,9 +100,13 @@ public class ZonaTrabajo {
         // Opcion de Ingresar ciertos archivos
         if(opcion == 2){
             
+            // Se procesa String
+            
+            String[] ArchivosB = Archivos.split(" ");
+            
             // Se agegan los archivos
             
-            index.agregarArchivosWorkspace(workspace,Archivos);
+            index.agregarArchivosWorkspace(workspace,ArchivosB);
             
             // Se eliminan los archivos repetidos 
 
@@ -116,9 +120,11 @@ public class ZonaTrabajo {
     
     /**
      * Metodo que simula la funcion Commit de Git
+     * @param nAutor String, Nombre autor commit
+     * @param mensajeCommit String, Mensaje commit
      * @return Entero, este es para finalizar metodo. 
      */
-    public int gitCommit(){
+    public int gitCommit(String nAutor, String mensajeCommit){
         
         // Condicion de Borde        
         
@@ -128,21 +134,13 @@ public class ZonaTrabajo {
             return 0;
         }
         
-        // Se obtienen los datos del usuario para el commit
-        
-        System.out.println("Ingrese nombre del autor del commit: ");
-        Scanner objAutor = new Scanner(System.in);
-        String nAutor = objAutor.nextLine();
-        
-        System.out.println("Ingrese mensaje del commit: ");
-        Scanner objMensaje = new Scanner(System.in);
-        String mensajeCommit = objMensaje.nextLine();
+        // Se obtienen fecha para el Commit
         
         LocalDateTime objFecha = LocalDateTime.now();   
         DateTimeFormatter objFormateado = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");  
         String formattedDate = objFecha.format(objFormateado);
          
-        // Se inserta nuevo commit
+        // Se crea e inserta nuevo commit
         
         ArrayList<TextoPlano> textosIndex = index.getTextosPlanos();
         Commit commit = new Commit(nAutor,formattedDate,mensajeCommit,textosIndex);
@@ -377,5 +375,10 @@ public class ZonaTrabajo {
     @Override
     public String toString() {
         return "ZonaTrabajo" + "\n\nNombre Repositorio = " + nombreRepositorio + "\nNombre Autor = " + nombreAutor + "\n\nWorkspace = " + workspace + "\n\nIndex = " + index + "\n\nLocal Repository = " + local + "\n\nRemote Repository = " + remote;
-    }   
+    }
+    
+    public String toStringWorkspace(){
+        return workspace.toString();
+    }
+    
 }
