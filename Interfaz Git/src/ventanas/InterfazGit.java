@@ -185,8 +185,13 @@ public class InterfazGit extends javax.swing.JFrame {
 
         getContentPane().add(jPanelVentanaInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 360, 121));
 
+        jPanelStatus.setMaximumSize(new java.awt.Dimension(526, 460));
+        jPanelStatus.setPreferredSize(new java.awt.Dimension(526, 460));
+        jPanelStatus.setRequestFocusEnabled(false);
+
         jFieldTituloPanelStatus.setEditable(false);
 
+        jTextAreaInformacionPanelStatus.setEditable(false);
         jTextAreaInformacionPanelStatus.setColumns(20);
         jTextAreaInformacionPanelStatus.setRows(5);
         jAreaPanelStatus.setViewportView(jTextAreaInformacionPanelStatus);
@@ -204,16 +209,19 @@ public class InterfazGit extends javax.swing.JFrame {
             jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelStatusLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jAreaPanelStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addGap(447, 447, 447))
-            .addGroup(jPanelStatusLayout.createSequentialGroup()
-                .addGap(188, 188, 188)
-                .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbtnAceptarPanelStatus)
-                .addGap(217, 217, 217))
+                .addGroup(jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelStatusLayout.createSequentialGroup()
+                        .addComponent(jAreaPanelStatus)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
+                        .addGap(0, 174, Short.MAX_VALUE)
+                        .addGroup(jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
+                                .addComponent(jbtnAceptarPanelStatus)
+                                .addGap(204, 204, 204))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
+                                .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(179, 179, 179))))))
         );
         jPanelStatusLayout.setVerticalGroup(
             jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,13 +229,13 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jFieldTituloPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jAreaPanelStatus)
-                .addGap(18, 18, 18)
+                .addComponent(jAreaPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbtnAceptarPanelStatus)
-                .addContainerGap())
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 460));
+        getContentPane().add(jPanelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 400));
 
         jPanelMenuCommit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -261,47 +269,48 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuCommitLayout.setHorizontalGroup(
             jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuCommitLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelMenuCommitLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jFieldAutorCommit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFieldMensajeCommit, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelMenuCommitLayout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel8))
-                    .addGroup(jPanelMenuCommitLayout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jbtnAceptarCommit)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jFieldAutorCommit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFieldMensajeCommit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuCommitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuCommitLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(136, 136, 136))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuCommitLayout.createSequentialGroup()
+                        .addComponent(jbtnAceptarCommit)
+                        .addGap(132, 132, 132))))
         );
         jPanelMenuCommitLayout.setVerticalGroup(
             jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuCommitLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addGap(8, 8, 8)
                 .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jFieldAutorCommit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelMenuCommitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jFieldMensajeCommit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jFieldMensajeCommit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtnAceptarCommit)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanelMenuCommit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 340, 160));
+        getContentPane().add(jPanelMenuCommit, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 340, 140));
 
-        jPanelMenuAdd2.setMaximumSize(new java.awt.Dimension(528, 493));
-        jPanelMenuAdd2.setMinimumSize(new java.awt.Dimension(528, 493));
-        jPanelMenuAdd2.setPreferredSize(new java.awt.Dimension(528, 493));
+        jPanelMenuAdd2.setMaximumSize(new java.awt.Dimension(500, 410));
+        jPanelMenuAdd2.setMinimumSize(new java.awt.Dimension(500, 420));
+        jPanelMenuAdd2.setPreferredSize(new java.awt.Dimension(500, 410));
 
         jLabel4.setText("Ingrese Nombres de Archivos: ");
 
@@ -335,54 +344,56 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuAdd2Layout.setHorizontalGroup(
             jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
-                        .addGap(119, 119, 119))
                     .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGap(266, 266, 266))
-                            .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(236, 236, 236)))
-                        .addComponent(jFieldNombreAdd2)
-                        .addContainerGap())))
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(jFieldNombreAdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
                 .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
+                        .addGap(214, 214, 214)
                         .addComponent(jbtnAceptarAdd2))
                     .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                        .addGap(512, 512, 512)
-                        .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel3)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelMenuAdd2Layout.setVerticalGroup(
             jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuAdd2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addComponent(jLabel5)
-                .addGap(118, 118, 118)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addGroup(jPanelMenuAdd2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jFieldNombreAdd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbtnAceptarAdd2)
-                .addGap(19, 19, 19))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelMenuAdd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 430));
+        getContentPane().add(jPanelMenuAdd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 410));
+
+        jPanelMenuAdd.setMaximumSize(new java.awt.Dimension(214, 128));
 
         jLabel1.setText("Menu Add");
 
@@ -405,27 +416,30 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuAddLayout.setHorizontalGroup(
             jPanelMenuAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuAddLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLabel1))
-            .addGroup(jPanelMenuAddLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addComponent(jbtnAgregarTodosAdd))
-            .addGroup(jPanelMenuAddLayout.createSequentialGroup()
-                .addGap(3, 3, 3)
-                .addComponent(jbtnSeleccionarAdd))
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(jPanelMenuAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuAddLayout.createSequentialGroup()
+                        .addGroup(jPanelMenuAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jbtnSeleccionarAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbtnAgregarTodosAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuAddLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(78, 78, 78))))
         );
         jPanelMenuAddLayout.setVerticalGroup(
             jPanelMenuAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuAddLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(5, 5, 5)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnAgregarTodosAdd)
-                .addGap(5, 5, 5)
-                .addComponent(jbtnSeleccionarAdd))
+                .addGap(18, 18, 18)
+                .addComponent(jbtnSeleccionarAdd)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanelMenuAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 180, 90));
+        getContentPane().add(jPanelMenuAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 214, 128));
 
         jPanelMenuInit.setMaximumSize(new java.awt.Dimension(360, 156));
         jPanelMenuInit.setMinimumSize(new java.awt.Dimension(360, 156));
@@ -474,11 +488,11 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
-                        .addComponent(btnAceptInit)
-                        .addGap(132, 132, 132))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addGap(152, 152, 152))))
+                        .addGap(152, 152, 152))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuInitLayout.createSequentialGroup()
+                        .addComponent(btnAceptInit)
+                        .addGap(133, 133, 133))))
         );
         jPanelMenuInitLayout.setVerticalGroup(
             jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,9 +507,9 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addGroup(jPanelMenuInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jFieldNombreInit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAceptInit, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelMenuInit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 360, 156));
@@ -541,12 +555,13 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuNewArchivoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(118, 118, 118))
-            .addGroup(jPanelMenuNewArchivoLayout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(btnAceptarNewArchivo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelMenuNewArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuNewArchivoLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(118, 118, 118))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuNewArchivoLayout.createSequentialGroup()
+                        .addComponent(btnAceptarNewArchivo)
+                        .addGap(132, 132, 132))))
         );
         jPanelMenuNewArchivoLayout.setVerticalGroup(
             jPanelMenuNewArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -561,9 +576,9 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addGroup(jPanelMenuNewArchivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jFieldContenidoNewArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAceptarNewArchivo)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelMenuNewArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 340, 160));
@@ -699,7 +714,7 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelStatus.setVisible(true);
         BloqBotones();
         jFieldTituloPanelStatus.setText("Status Remote Repositoy");
-        jTextAreaInformacionPanelStatus.setText(Zona.toStringWorkspace());
+        jTextAreaInformacionPanelStatus.setText(Zona.toStringRemote());
     }//GEN-LAST:event_btnStaRemActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
