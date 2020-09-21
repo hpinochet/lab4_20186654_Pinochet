@@ -235,7 +235,7 @@ public class InterfazGit extends javax.swing.JFrame {
                         .addComponent(jAreaPanelStatus)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
-                        .addGap(0, 174, Short.MAX_VALUE)
+                        .addGap(0, 200, Short.MAX_VALUE)
                         .addGroup(jPanelStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStatusLayout.createSequentialGroup()
                                 .addComponent(jbtnAceptarPanelStatus)
@@ -253,13 +253,25 @@ public class InterfazGit extends javax.swing.JFrame {
                 .addComponent(jAreaPanelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jbtnAceptarPanelStatus)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelStatus);
         jPanelStatus.setBounds(10, 10, 500, 400);
 
         jPanelMenuCommit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jFieldAutorCommit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldAutorCommitActionPerformed(evt);
+            }
+        });
+
+        jFieldMensajeCommit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldMensajeCommitActionPerformed(evt);
+            }
+        });
 
         jLabelAutorMenuCommit.setText("Ingrese Autor Commit:");
 
@@ -324,6 +336,12 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuAdd2.setPreferredSize(new java.awt.Dimension(500, 410));
 
         jLabelNombreArchivosMenuAdd.setText("Ingrese Nombres de Archivos: ");
+
+        jFieldNombreAdd2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldNombreAdd2ActionPerformed(evt);
+            }
+        });
 
         jLabelTituloMenuAdd2.setText("Menu Add");
 
@@ -465,6 +483,18 @@ public class InterfazGit extends javax.swing.JFrame {
 
         jLabelTituloMenuInit.setText("Menu Init");
 
+        jFieldAutorInit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldAutorInitActionPerformed(evt);
+            }
+        });
+
+        jFieldNombreInit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldNombreInitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelMenuInitLayout = new javax.swing.GroupLayout(jPanelMenuInit);
         jPanelMenuInit.setLayout(jPanelMenuInitLayout);
         jPanelMenuInitLayout.setHorizontalGroup(
@@ -520,6 +550,18 @@ public class InterfazGit extends javax.swing.JFrame {
         });
 
         jLabelTituloMenuNewArchivo.setText("Menu Nuevo Archivo");
+
+        jFieldNombreNewArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldNombreNewArchivoActionPerformed(evt);
+            }
+        });
+
+        jFieldContenidoNewArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFieldContenidoNewArchivoActionPerformed(evt);
+            }
+        });
 
         jLabelNombreMenuNewArchivo.setText("Ingrese Nombre Archivo:");
 
@@ -727,7 +769,7 @@ public class InterfazGit extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPanelStatus.setVisible(true);
         BloqBotones();
-        jFieldTituloPanelStatus.setText("Remote Repositoy");
+        jFieldTituloPanelStatus.setText("Remote Repository");
         jTextAreaInformacionPanelStatus.setText(Zona.toStringRemote());
     }//GEN-LAST:event_btnStaRemActionPerformed
     
@@ -741,8 +783,7 @@ public class InterfazGit extends javax.swing.JFrame {
             jPanelMenuAdd.setVisible(true);
             BloqBotones();
         }else{
-            jPanelVentanaInformacion.setVisible(true);
-            BloqBotones();
+            jPanelVentanaInformacion.setVisible(true); 
             jFieldInformacionVInformacion.setText("No hay archivos en Workspace");
         }       
     }//GEN-LAST:event_btnAddActionPerformed
@@ -780,7 +821,6 @@ public class InterfazGit extends javax.swing.JFrame {
             BloqBotones();
         }else{
             jPanelVentanaInformacion.setVisible(true); 
-            BloqBotones();
             jFieldInformacionVInformacion.setText("No hay archivos en Index");
         }
     }//GEN-LAST:event_btnCommitActionPerformed
@@ -798,7 +838,6 @@ public class InterfazGit extends javax.swing.JFrame {
             jFieldInformacionVInformacion.setText("Pull Realizado Correctamente");
         }else{
             jPanelVentanaInformacion.setVisible(true); 
-            BloqBotones();
             jFieldInformacionVInformacion.setText("No hay Commits en Remote Repository");
         }
     }//GEN-LAST:event_btnPullActionPerformed
@@ -815,8 +854,7 @@ public class InterfazGit extends javax.swing.JFrame {
             Zona.gitPush();
             jFieldInformacionVInformacion.setText("Push Realizado Correctamente");
         }else{
-            jPanelVentanaInformacion.setVisible(true);
-            BloqBotones();
+            jPanelVentanaInformacion.setVisible(true); 
             jFieldInformacionVInformacion.setText("No hay Commits en Local Repository");
         }
     }//GEN-LAST:event_btnPushActionPerformed
@@ -831,6 +869,14 @@ public class InterfazGit extends javax.swing.JFrame {
         jPanelMenuAdd2.setVisible(true);
         jTextAreaStatusWorkspaceAdd.setText(Zona.toStringWorkspace());
     }//GEN-LAST:event_jbtnSeleccionarAddActionPerformed
+
+    private void jFieldNombreAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldNombreAdd2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldNombreAdd2ActionPerformed
+
+    private void jFieldMensajeCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldMensajeCommitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldMensajeCommitActionPerformed
     
     /**
      * Boton Aceptar de JPanelMenuCommit
@@ -840,13 +886,27 @@ public class InterfazGit extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nombreAutorCommit = jFieldAutorCommit.getText();
         String nombreMensajeCommit = jFieldMensajeCommit.getText();
-        Zona.gitCommit(nombreAutorCommit  ,nombreMensajeCommit);
-        jPanelMenuCommit.setVisible(false);
-        jFieldAutorCommit.setText(null);
-        jFieldMensajeCommit.setText(null);
-        jPanelVentanaInformacion.setVisible(true);
-        jFieldInformacionVInformacion.setText("Commit Realizado Correctamente");
+        
+        if(nombreAutorCommit == null || nombreAutorCommit.isEmpty() || nombreMensajeCommit == null || nombreMensajeCommit.isEmpty()){
+            jFieldAutorCommit.setText(null);
+            jFieldMensajeCommit.setText(null);
+            jPanelMenuCommit.setVisible(false);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Los campos no han sido llenados correctamente");
+        }
+        else{
+            Zona.gitCommit(nombreAutorCommit  ,nombreMensajeCommit);
+            jPanelMenuCommit.setVisible(false);
+            jFieldAutorCommit.setText(null);
+            jFieldMensajeCommit.setText(null);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Commit Realizado Correctamente");
+        }
     }//GEN-LAST:event_jbtnAceptarCommitActionPerformed
+
+    private void jFieldAutorCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldAutorCommitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldAutorCommitActionPerformed
     
     /**
      * Boton Aceptar de JPanelMenuAdd2
@@ -855,12 +915,21 @@ public class InterfazGit extends javax.swing.JFrame {
     private void jbtnAceptarAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarAdd2ActionPerformed
         // TODO add your handling code here:
         String Archivos = jFieldNombreAdd2.getText();
-        Zona.gitAdd(2,Archivos);
-        jFieldNombreAdd2.setText(null);
-        jTextAreaStatusWorkspaceAdd.setText(null);
-        jPanelMenuAdd2.setVisible(false);
-        jPanelVentanaInformacion.setVisible(true);
-        jFieldInformacionVInformacion.setText("Add Realizado Correctamente");
+        
+        if(Archivos == null || Archivos.isEmpty()){
+            jFieldNombreAdd2.setText(null);
+            jPanelMenuAdd2.setVisible(false);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Los campos no han sido llenados correctamente");
+        }else{
+            Zona.gitAdd(2,Archivos);
+            jFieldNombreAdd2.setText(null);
+            jTextAreaStatusWorkspaceAdd.setText(null);
+            jPanelMenuAdd2.setVisible(false);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Add Realizado Correctamente");
+        }
+ 
     }//GEN-LAST:event_jbtnAceptarAdd2ActionPerformed
     
     /**
@@ -872,13 +941,28 @@ public class InterfazGit extends javax.swing.JFrame {
         String AutorInit = jFieldAutorInit.getText();
         String NombreInit = jFieldNombreInit.getText();
         
-        Zona = new ZonaTrabajo(NombreInit,AutorInit);
-        jFieldAutorInit.setText(null);
-        jFieldNombreInit.setText(null);
-        jPanelMenuInit.setVisible(false);
-        jPanelVentanaInformacion.setVisible(true);
-        jFieldInformacionVInformacion.setText("Init Realizado Correctamente");
+        if(AutorInit == null || AutorInit.isEmpty() || NombreInit == null || NombreInit.isEmpty()){
+            jPanelMenuInit.setVisible(false);
+            btnInit.setEnabled(true);
+            jFieldAutorInit.setText(null);
+            jFieldNombreInit.setText(null);
+        }else{
+            Zona = new ZonaTrabajo(NombreInit,AutorInit);
+            jFieldAutorInit.setText(null);
+            jFieldNombreInit.setText(null);
+            jPanelMenuInit.setVisible(false);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Init Realizado Correctamente");
+        }
     }//GEN-LAST:event_btnAceptInitActionPerformed
+
+    private void jFieldAutorInitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldAutorInitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldAutorInitActionPerformed
+
+    private void jFieldNombreInitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldNombreInitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldNombreInitActionPerformed
     
     /**
      * Boton Aceptar de JPanelMenuNewArchivo
@@ -889,16 +973,29 @@ public class InterfazGit extends javax.swing.JFrame {
         String nombreNew = jFieldNombreNewArchivo.getText();
         String contenidoNew = jFieldContenidoNewArchivo.getText();
         
-        Zona.gitCrear(nombreNew, contenidoNew);
-        
-        jFieldNombreNewArchivo.setText(null);
-        jFieldContenidoNewArchivo.setText(null);
-        
-        jPanelMenuNewArchivo.setVisible(false);
-        jPanelVentanaInformacion.setVisible(true);
-        jFieldInformacionVInformacion.setText("Nuevo Archivo Realizado Correctamente");
-        
+        if(nombreNew == null || nombreNew.isEmpty() || contenidoNew == null || contenidoNew.isEmpty()){
+            jPanelMenuNewArchivo.setVisible(false);
+            jFieldNombreNewArchivo.setText(null);
+            jFieldContenidoNewArchivo.setText(null);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Los campos no han sido llenados correctamente");
+        }else{
+            Zona.gitCrear(nombreNew, contenidoNew);
+            jFieldNombreNewArchivo.setText(null);
+            jFieldContenidoNewArchivo.setText(null);
+            jPanelMenuNewArchivo.setVisible(false);
+            jPanelVentanaInformacion.setVisible(true);
+            jFieldInformacionVInformacion.setText("Nuevo Archivo Realizado Correctamente");
+        }    
     }//GEN-LAST:event_btnAceptarNewArchivoActionPerformed
+
+    private void jFieldNombreNewArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldNombreNewArchivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldNombreNewArchivoActionPerformed
+
+    private void jFieldContenidoNewArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFieldContenidoNewArchivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFieldContenidoNewArchivoActionPerformed
     
     /**
      * Boton Agregar todos los archivos de JPanelMenuAdd

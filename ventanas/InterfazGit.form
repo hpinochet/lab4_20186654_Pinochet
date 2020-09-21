@@ -136,7 +136,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="174" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="200" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jbtnAceptarPanelStatus" min="-2" max="-2" attributes="0"/>
@@ -161,7 +161,7 @@
                   <Component id="jAreaPanelStatus" min="-2" pref="299" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jbtnAceptarPanelStatus" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace pref="78" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -265,8 +265,14 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="jFieldAutorCommit">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldAutorCommitActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jFieldMensajeCommit">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldMensajeCommitActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelAutorMenuCommit">
           <Properties>
@@ -383,6 +389,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jFieldNombreAdd2">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldNombreAdd2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelTituloMenuAdd2">
           <Properties>
@@ -595,11 +604,17 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jFieldAutorInit">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldAutorInitActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="jFieldNombreInit">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldNombreInitActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
@@ -686,8 +701,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jFieldNombreNewArchivo">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldNombreNewArchivoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jFieldContenidoNewArchivo">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFieldContenidoNewArchivoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNombreMenuNewArchivo">
           <Properties>

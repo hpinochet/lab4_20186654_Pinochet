@@ -120,7 +120,7 @@ public class TextoPlano {
      */
     @Override
     public String toString() {
-        return "\nNombre archivo = " + nombre + " - Contenido = " + contenido;
+        return "\nNombre archivo = " + nombre + " - Fecha creacion = " + fecha + " - Contenido = " + contenido;
     }
     
 }

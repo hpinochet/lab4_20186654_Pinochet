@@ -148,7 +148,7 @@ public class Commit {
      */
     @Override
     public String toString() {
-        return "\n\nAutor commit = " + autor + " - Mensaje = " + mensaje + " - Archivos = " + TextosPlanos;
+        return "\n\nAutor commit = " + autor + " - Fecha creacion = " + fecha + " - Mensaje = " + mensaje + " - TextosPlanos = " + TextosPlanos;
     }
    
 }

@@ -95,7 +95,7 @@ public class Index {
      */
     @Override
     public String toString() {
-        return "Archivos: " + TextosPlanos;
+        return "TextosPlanos = " + TextosPlanos;
     }
     
 }
