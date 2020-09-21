@@ -3,8 +3,6 @@ package Modelo;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 /**
  * Clase que representa el repositorio de Git.
@@ -75,15 +73,7 @@ public class ZonaTrabajo {
      * @return Entero, este es para finalizar metodo.
      */
     public int gitAdd(int opcion, String Archivos){
-               
-        // Caso borde
-        
-        if(workspace.numeroArchivosWorkspace() == 0){
-            System.out.println("El Workspace no posee archivos");
-            System.out.println(" ");
-            return 0;
-        }
-       
+                      
         // Opcion de Ingresar todos los Archivos
         if(opcion == 1){
 
@@ -125,15 +115,7 @@ public class ZonaTrabajo {
      * @return Entero, este es para finalizar metodo. 
      */
     public int gitCommit(String nAutor, String mensajeCommit){
-        
-        // Condicion de Borde        
-        
-        if(index.numeroArchivosIndex() == 0){
-            System.out.println("El Index no posee archivos");
-            System.out.println(" ");
-            return 0;
-        }
-        
+                
         // Se obtienen fecha para el Commit
         
         LocalDateTime objFecha = LocalDateTime.now();   
@@ -160,15 +142,7 @@ public class ZonaTrabajo {
      * @return Entero, este es para finalizar metodo.
      */
     public int gitPush(){
-                
-        // Condicion de Borde
-        
-        if(local.numeroCommitsLocal() == 0){
-            System.out.println("El Local Repository no posee commits");
-            System.out.println(" ");
-            return 0;
-        }
-        
+                        
         // Se agregan los commits
         
         remote.agregarCommits(local);
@@ -185,15 +159,7 @@ public class ZonaTrabajo {
      * @return Entero, este es para finalizar metodo.
      */
     public int gitPull(){
-
-        // Condicion de Borde
-  
-        if(remote.numeroCommitsRemote() == 0){
-            System.out.println("El Remote Repository no posee commits");
-            System.out.println(" ");
-            return 0;
-        }
-            
+   
         // Se extraen los Textos planos de los commits y se ingresan a Workspace
         
         workspace.agregaArchivosRemote(remote);
@@ -205,63 +171,7 @@ public class ZonaTrabajo {
         return 0;
              
     }
-    
-    /**
-     * Metodo que entrega por pantalla nombre y autor del repository, numero de archivos worksapce y index y si el Remote Repository esta actualizado o no
-     */
-    public void gitStatus(){
-            
-        // Numero Archivos Worksapce
-        
-        int nArchWorkspace = workspace.numeroArchivosWorkspace();
-        
-        // Numero Archivos Index
-        
-        int nArchIndex = index.numeroArchivosIndex();
-        
-        // Numero Commits Local Repository
-       
-        int nCommLocal = local.numeroCommitsLocal();
-        
-        // Estan al dia
-        
-        ArrayList<Commit> commitsRemote = remote.getCommits();
-        ArrayList<Commit> commitsLocal = local.getCommits();
-        
-        // Al dia
-        
-        int Acumulador = 0;
-        boolean alDia;
-    
-        for(int i = 0; i < commitsLocal.size(); i++){        
-            Commit auxCommit = commitsLocal.get(i);
-            for(int j = 0; j < commitsRemote.size(); j++){
-                Commit Aux2 = commitsRemote.get(j);
-                if(auxCommit.equals(Aux2)){
-                    Acumulador++;
-                }
-            }
-        }
-        
-        if(Acumulador == commitsLocal.size()){
-            alDia = true;
-        }else{
-            alDia = false;
-        }   
-        
-        // Se muestra informacion por pantalla
-        
-        if(alDia){
-            System.out.println("Status\n\nNombre Repositorio: " + nombreRepositorio + "\nNombre Autor Repositorio: " + nombreAutor + "\nNumero Archivos en Workspace: " +
-                    nArchWorkspace + "\nNumero Archivos en Index: " + nArchIndex + "\nNumero Commits en Local Repository: " + nCommLocal 
-                    + "\nRemote Repository esta al dia: Si" );
-        }else{
-            System.out.println("Status\n\nNombre Repositorio: " + nombreRepositorio + "\nNombre Autor Repositorio: " + nombreAutor + "\nNumero Archivos en Workspace: " +
-                    nArchWorkspace + "\nNumero Archivos en Index: " + nArchIndex + "\nNumero Commits en Local Repository: " + nCommLocal
-                    + "\nRemote Repository esta al dia: No" );
-        }
-    }
-    
+      
     /**
      * Se muestra por pantalla los ultimos 5 commits
      * @return String, Retorna informacion ultimos commits
@@ -272,6 +182,61 @@ public class ZonaTrabajo {
         return local.obtenerUltimosCommits();
   
     }
+    
+    // Verificadores Casos borde
+    
+    /**
+     * Verfica si tiene archivos Workspace 
+     * @return Boolean, Indica caso borde
+     */
+    public boolean verificarWorkspace(){
+        
+        // Caso borde    
+        if(workspace.numeroArchivosWorkspace() == 0){
+            return false;
+        }
+        return true;
+    }
+    
+    /**
+     * Verfica si tiene archivos Index
+     * @return Boolean, Indica caso borde
+     */
+    public boolean verificarIndex(){
+        
+        // Condicion de Borde        
+        if(index.numeroArchivosIndex() == 0){
+            return false;
+        }
+        return true;
+    }
+    
+    /**
+     * Verfica si tiene commits Local Repository
+     * @return Boolean, Indica caso borde
+     */
+    public boolean verificarLocal(){
+        
+        // Condicion de Borde
+        if(local.numeroCommitsLocal() == 0){
+            return false;
+        }    
+        return true; 
+    }
+    
+    /**
+     * Verfica si tiene commits Remote Repository
+     * @return Boolean, Indica caso borde
+     */
+    public boolean verificarRemote(){
+        
+        // Condicion de Borde
+        if(remote.numeroCommitsRemote() == 0){
+            return false;
+        }
+        return true;
+    }
+    
     
     /**
      * Selector del nombre del repositorio
@@ -369,6 +334,8 @@ public class ZonaTrabajo {
         this.remote = remote;
     }
     
+    // ToStrings
+    
     /**
      * Print de ZonaTrabajo
      * @return String con datos
@@ -378,18 +345,34 @@ public class ZonaTrabajo {
         return "ZonaTrabajo" + "\n\nNombre Repositorio = " + nombreRepositorio + "\nNombre Autor = " + nombreAutor + "\n\nWorkspace = " + workspace + "\n\nIndex = " + index + "\n\nLocal Repository = " + local + "\n\nRemote Repository = " + remote;
     }
     
+    /**
+     * Print de Workspace
+     * @return String con datos
+     */
     public String toStringWorkspace(){
         return workspace.toString();
     }
     
+    /**
+     * Print de Index
+     * @return String con datos
+     */
     public String toStringIndex(){
         return index.toString();
     }
     
+    /**
+     * Print de Local Repository
+     * @return String con datos
+     */
     public String toStringLocal(){
         return local.toString();
     }
     
+    /**
+     * Print de Remote Repository
+     * @return String con datos
+     */
     public String toStringRemote(){
         return remote.toString();
     }

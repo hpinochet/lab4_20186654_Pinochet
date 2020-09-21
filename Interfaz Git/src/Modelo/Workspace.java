@@ -121,7 +121,7 @@ public class Workspace {
      */
     @Override
     public String toString() {
-        return "TextosPlanos = " + TextosPlanos;
+        return "Archivos: " + TextosPlanos;
     }
     
 }
